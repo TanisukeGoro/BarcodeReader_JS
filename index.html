@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<html lang="en">
+
+<head>
+    <title>バーコードの読み取り</title>
+
+    <style>
+        .container {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <!-- 読み込んだ / 撮影した写真の表示領域 -->
+        <canvas width="320" height="240" id="picture"></canvas>
+        <hr>
+        <!-- ファイル読み込みボタン | スマホならカメラが起動するか写真を選択出来る -->
+        <!-- labelとかで囲っておいて、inputは非表示にして擬似ボタンを配置した方がいい気がする -->
+        <label for="Take-Picture">
+            ⬇︎読み取りボタン<br><br>
+            <img width="50px" src="./icon/barcode-scanner.png" alt="読み取りボタン">
+        </label>
+        <input id="Take-Picture" type="file" accept="image/*;capture=camera" name="scanner" />
+
+        <!-- 結果の出力 -->
+        <p id="textbit"></p>
+    </div>
+    <!-- 以下の2つのファイルを読み込めばおっけい -->
+    <script type="text/javascript" src="./barcode-reader/JOB.js"></script>
+    <script src="./barcode-reader/app.js"></script>
+</body>
+
+</html>
