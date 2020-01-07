@@ -1,5 +1,5 @@
 let takePicture = document.querySelector("#Take-Picture"),
-    showPicture = document.createElement("img");
+showPicture = document.createElement("img");
 Result = document.querySelector("#textbit");
 let canvas = document.getElementById("picture");
 let ctx = canvas.getContext("2d");
@@ -16,6 +16,7 @@ JOB.Init();
  * これを書き換えてPHP側に投げるか、form の input に投げるといい。
  */
 JOB.SetImageCallback(function(result) {
+    console.log('変更あり')
     if (result.length > 0) {
         let tempArray = [];
         for (let i = 0; i < result.length; i++) {
